@@ -1,2 +1,4 @@
 .env
 ask-gpt
+.DS_Store
+openai.toml

@@ -14,17 +14,29 @@ Run the cli tool and enter your queries directly in the terminal.
 
 Use the provided Alfred workflow to quickly access the model and input your queries without leaving your current application.
 
-Simple answer:
+Fast answer:
 
 ```
 qa Why trees have so many branches?
 ```
 
-More expensive answer:
+More expensive and larger answer:
 
 ```
 qal Why trees have so many branches?
 ```
+
+### Fast backend
+
+<p align="center">
+  <img width="1197" src="assets/ask-gpt-alfred-qa.gif">
+</p>
+
+### More expensive and capable backends
+
+<p align="center">
+  <img width="1197" src="assets/ask-gpt-alfred-qal.gif">
+</p>
 
 ## Raycast script
 
@@ -52,6 +64,10 @@ As you can see MacOS is doubly covered, but what about Windows and Linux? I'll b
 
 - Install `requests` using `python3 -m pip install requests`
 - `Cmd+click` the `.alfredworkflow` file and follow the instructions in the config step. You'll have to supply your OpenAI API key.
+
+<p align="center">
+  <img width="1163" src="assets/ask-gpt-alfred-installation.gif">
+</p>
 
 ## Golang executable
 
