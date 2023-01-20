@@ -2,7 +2,7 @@
 
 This project provides a convenient way to communicate with OpenAI models through various interfaces. The following methods are currently supported:
 
-## Command-line executable
+## Golang executable
 
 Run the cli tool and enter your queries directly in the terminal.
 
@@ -30,7 +30,15 @@ qal Why trees have so many branches?
 
 Activate Raycast, type `ask` and `<tab>` to start filling the prompt argument. 
 
+```
+ask Why trees have so many branches?
+```
+
 Find out more in the Readme file located in the `raycast` directory.
+
+## Other tools?
+
+As you can see MacOS is doubly covered, but what about Windows and Linux? I'll be writing other integrations too, but you're more than welcome to submit PRs with your implementation for tools like Wox or Cerebro!
 
 # Installation
 
@@ -41,9 +49,9 @@ Find out more in the Readme file located in the `raycast` directory.
 - Install `requests` using `python3 -m pip install requests`
 - `Cmd+click` the `.alfredworkflow` file and follow the instructions in the config step. You'll have to supply your OpenAI API key.
 
-## Executable
+## Golang executable
 
-Build it yourself with the Golang build tool:
+Build it yourself with the [Golang build](https://go.dev/doc/install) tool:
 
 ```
 cd cli
