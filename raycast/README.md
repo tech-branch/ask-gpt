@@ -6,10 +6,14 @@
 2. Create a new file in the scripting directory and name it `openai.toml`. Put your API key in it like `apikey = "sk-abcde"`
 3. This script references `#!/usr/bin/env python3` for Python, but you might want to repoint it at an installation that works for you.
 
+<p align="center">
+  <img width="600" src="../assets/ask-gpt-raycast-installation.gif">
+</p>
+
 You should be good to go. Fire up Raycast, type `ask` and `<tab>` to start filling the prompt argument.
 
 <p align="center">
-  <img width="899" height="501" src="../assets/ask-gpt-raycast.gif">
+  <img width="600" src="../assets/ask-gpt-raycast.gif">
 </p>
 
 ## Configuration
