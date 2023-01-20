@@ -8,6 +8,12 @@
 
 You should be good to go. Fire up Raycast, type `ask` and `<tab>` to start filling the prompt argument.
 
+<p align="center">
+  <img width="899" height="501" src="../assets/ask-gpt-raycast.gif">
+</p>
+
+## Configuration
+
 Feel free to modify the script, there's plenty to adjust to your liking. 
 
 The script is commented in a way that should help navigate it pretty easily.

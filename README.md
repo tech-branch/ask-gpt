@@ -36,6 +36,10 @@ ask Why trees have so many branches?
 
 Find out more in the Readme file located in the `raycast` directory.
 
+<p align="center">
+  <img width="899" src="assets/ask-gpt-raycast.gif">
+</p>
+
 ## Other tools?
 
 As you can see MacOS is doubly covered, but what about Windows and Linux? I'll be writing other integrations too, but you're more than welcome to submit PRs with your implementation for tools like Wox or Cerebro!
