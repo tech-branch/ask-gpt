@@ -64,8 +64,8 @@ items = []
 for idx, response in enumerate(responses):
     items.append({
         "uid": str(idx),
-        "title": response["model-and-tokens"],
-        "subtitle": response["response"],
+        "title": response["response"][:64],
+        "subtitle": response["response"][64:],
         "arg": response["response"],
         "text": {
             "copy": response["response"],
