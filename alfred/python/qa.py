@@ -41,8 +41,8 @@ print(json.dumps({
     "items": [
         {
             "uid": "1",
-            "title": "Curie replied:",
-            "subtitle": clean_response,
+            "title": clean_response[:64],
+            "subtitle": clean_response[64:],
             "arg": clean_response,
             "text": {
                 "copy": clean_response,
