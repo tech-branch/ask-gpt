@@ -78,6 +78,21 @@ cd cli
 go build
 ```
 
+Create a `.env` file where the executable is, and fill it in. More details in the [cli README](cli/README.md)
+
+Example of a `.env` file:
+
+```
+OPENAI_API_KEY=sk-abcdefg
+OPENAI_MODEL=text-davinci-003
+OPENAI_TEMPERATURE=0.7
+OPENAI_MAX_TOKENS=30
+```
+
+<p align="center">
+  <img width="600" src="assets/ask-gpt-cli-run.gif">
+</p>
+
 ## Raycast script
 
 1. Add the `ask-gpt.py` script to a directory of your choice, be it an already existing scripts directory or a new one like this `raycast` directory. 
@@ -87,6 +102,8 @@ go build
 3. This script references `#!/usr/bin/env python3` for Python, but you might want to repoint it at an installation that works for you. The script needs `requests` and `toml` - though feel free to modify.
 
 You should be good to go. Fire up Raycast, type `ask` and `<tab>` to start filling the prompt argument.
+
+More details in the [Raycast README](raycast/README.md)
 
 <p align="center">
   <img width="600" src="assets/ask-gpt-raycast-installation.gif">
