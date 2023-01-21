@@ -7,7 +7,7 @@ This project provides a convenient way to communicate with OpenAI models through
 Run the cli tool and enter your queries directly in the terminal.
 
 ```bash
-./ask-gpt "Why trees have so many branches?"
+./ask-gpt "Why do trees grow branches?"
 ```
 
 ## Alfred workflow
@@ -17,13 +17,13 @@ Use the provided Alfred workflow to quickly access the model and input your quer
 Fast answer:
 
 ```
-qa Why trees have so many branches?
+qa Why do trees grow branches?
 ```
 
 More expensive and larger answer:
 
 ```
-qal Why trees have so many branches?
+qal Why do trees grow branches?
 ```
 
 ### Fast backend
@@ -43,7 +43,7 @@ qal Why trees have so many branches?
 Activate Raycast, type `ask` and `<tab>` to start filling the prompt argument. 
 
 ```
-ask Why trees have so many branches?
+ask Why do trees grow branches?
 ```
 
 Find out more in the Readme file located in the `raycast` directory.
