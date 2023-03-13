@@ -13,7 +13,7 @@
 You should be good to go. Fire up Raycast, type `ask` and `<tab>` to start filling the prompt argument.
 
 <p align="center">
-  <img width="600" src="../assets/ask-gpt-raycast.gif">
+  <img width="600" src="../assets/ask-gpt-raycast-ask-chat.gif">
 </p>
 
 ## Configuration
