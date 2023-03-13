@@ -26,15 +26,16 @@ import os
 # -------------------
 # modify to your preference
 
-MODEL = "text-davinci-003"  # Most expensive, slow but most capable model
-# MODEL = "text-curie-001"      # Less expensive, faster and almost as capable model
+MODEL = "gpt-3.5-turbo"       # Most capable model, atm also super cheap
+# MODEL = "text-davinci-003"  # Most expensive, slow but very capable model
+# MODEL = "text-curie-001"    # Less expensive, faster and almost as capable model
 # MODEL = "text-ada-001"      # Least expensive, fastest but least capable model
 
-# MAX_TOKENS = 20             # Allow only brief answers, might yield too general answers
-MAX_TOKENS = 256              # Allow a rather lenghty answer, encourages more context
+# MAX_TOKENS = 20             # Allow only brief answers, might be too general
+MAX_TOKENS = 512              # Allow a rather lenghty answer, encourages more context
 # MAX_TOKENS = 1024           # A large allowance for tokens, for long and complex answers
 
-TEMPERATURE = 0.7             # (0.0 -> 1.0) 0 would mean only safest answers
+TEMPERATURE = 0.8             # 0 would mean safest answers, check ranges for the model you use
 
 #
 # -------------------
@@ -77,18 +78,33 @@ headers = {
 
 data = {
   "model": MODEL,
-  "prompt": prompt,
   "max_tokens": MAX_TOKENS,
   "temperature": TEMPERATURE
 }
+
+if MODEL.startswith('gpt'):
+  data["messages"] = [{"role": "user", "content": prompt}]
+
+elif MODEL.startswith('text'):
+  data["prompt"] = prompt
+
+else:
+  raise Exception(f"Unknown model type: {MODEL}, please check the script parameters and try again")
 
 # --------------------------------
 #  Make the web request to OpenAI
 #
 
+# standard text completion endpoint
+url = "https://api.openai.com/v1/completions"
+
+if MODEL.startswith('gpt'):
+  # change to the ChatGPT completion endpoint
+  url = "https://api.openai.com/v1/chat/completions"
+
 try:
   response_raw = requests.post(
-    "https://api.openai.com/v1/completions",
+    url,
     headers=headers,
     data=json.dumps(data)
   )
@@ -111,7 +127,17 @@ if not (response.get("error") is None):
   )
 
 else:
-  answer = response['choices'][0]['text'].replace("\n", "")
+  answer = ""
+  if MODEL.startswith('gpt'):
+    # Parse the answer from the ChatGPT response
+    answer = response['choices'][0]['message']['content']
+  elif MODEL.startswith('text'):
+    # Parse the answer from the standard text model response
+    answer = response['choices'][0]['text'].replace("\n", "")
+  else:
+    # This should never happen, as it's also filtered earlier, but just in case
+    raise Exception(f"Unknown model type: {MODEL}, please check the parameters and try again")
+  
   completion_tokens = response['usage']['completion_tokens']
   total_tokens = response['usage']['total_tokens']
   

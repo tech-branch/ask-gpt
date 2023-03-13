@@ -49,7 +49,7 @@ ask Why do trees grow branches?
 Find out more in the Readme file located in the `raycast` directory.
 
 <p align="center">
-  <img width="600" src="assets/ask-gpt-raycast.gif">
+  <img width="600" src="assets/ask-gpt-raycast-ask-chat.gif">
 </p>
 
 ## Other tools?
